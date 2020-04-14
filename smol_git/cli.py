@@ -80,12 +80,12 @@ def status(*args, **kwargs):
 def commit(*args, **kwargs):
     """Record changes to the repository."""
     # https://click.palletsprojects.com/en/7.x/utils/#launching-editors
-    if kwargs["message"] is None:
+    if kwargs["message"] is not None:
+        commit_message = kwargs["message"]
+    else:
         marker = get_commit_message_marker()
         commit_message = click.edit(marker)
         commit_message = commit_message.split(marker, 1)[0].rstrip("\n")
-    else:
-        commit_message = kwargs["message"]
 
     if not commit_message:
         click.echo("Aborting commit due to empty commit message.")
