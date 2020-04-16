@@ -2,4 +2,4 @@
 
 the smol and stupid content tracker (not!)
 
-![smol](smol.png)
+![smol](https://raw.githubusercontent.com/vinayak-mehta/smol-git/master/smol.png)
