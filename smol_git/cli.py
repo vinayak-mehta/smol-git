@@ -72,7 +72,9 @@ def status(*args, **kwargs):
     """Show the working tree status."""
     # https://click.palletsprojects.com/en/7.x/utils/#ansi-colors
     dummy_status = get_status()
-    click.echo(dummy_status + click.style("\tnew file:   a.txt", fg="green") + "\n")
+    click.echo(
+        dummy_status + click.style("\tnew file:   a.txt", fg="green", bold=True) + "\n"
+    )
 
 
 @cli.command()
